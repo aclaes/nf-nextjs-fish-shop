@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -8,6 +9,13 @@ export default function Home() {
       </Head>
       <h1>Fisch Shop</h1>
       <p>Shop Admin Oberfläche</p>
+      <Image
+        src="https://unsplash.com/photos/9y7y26C-l4Y/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjU5MjcwNjYw&force=true&w=2400"
+        alt="Schöne Fische"
+        width={2400}
+        height={1800}
+        layout="responsive"
+      />
     </>
   );
 }
