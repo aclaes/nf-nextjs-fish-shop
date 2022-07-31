@@ -4,8 +4,8 @@ import {
   getProductById,
 } from '../../src/services/productsService';
 
-export function getStaticPaths() {
-  const products = getAllProducts();
+export async function getStaticPaths() {
+  const products = await getAllProducts();
 
   return {
     paths: products.map((product) => ({ params: { id: product.id } })),
@@ -13,8 +13,8 @@ export function getStaticPaths() {
   };
 }
 
-export function getStaticProps(context) {
-  const product = getProductById(context.params.id);
+export async function getStaticProps(context) {
+  const product = await getProductById(context.params.id);
 
   return {
     props: {

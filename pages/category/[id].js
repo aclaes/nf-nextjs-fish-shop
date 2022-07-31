@@ -4,8 +4,8 @@ import {
   getCategoryById,
 } from '../../src/services/categoriesService';
 
-export function getStaticPaths() {
-  const categories = getAllCategories();
+export async function getStaticPaths() {
+  const categories = await getAllCategories();
 
   return {
     paths: categories.map((category) => ({ params: { id: category.id } })),
@@ -13,8 +13,8 @@ export function getStaticPaths() {
   };
 }
 
-export function getStaticProps(context) {
-  const category = getCategoryById(context.params.id);
+export async function getStaticProps(context) {
+  const category = await getCategoryById(context.params.id);
 
   return {
     props: {
