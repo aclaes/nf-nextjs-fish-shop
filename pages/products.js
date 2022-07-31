@@ -17,6 +17,9 @@ export default function Products({ products }) {
         <title>Produkte</title>
       </Head>
       <h1>Produkte</h1>
+      <Link href="create-product">
+        <a>Neues Produkt</a>
+      </Link>
       <p>Liste aller Produkte</p>
       <ul>
         {products.map((product) => (
